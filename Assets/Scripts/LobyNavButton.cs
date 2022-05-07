@@ -17,42 +17,44 @@ public class LobyNavButton : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                StartBtn = false;
+                editBtnValue(false, true, false);
+               /* StartBtn = false;
                 ChaptBtn = true;
-                EndBtn = false;
+                EndBtn = false;*/
                 Debug.Log("시작에서챕터");
             }
         }else if(ChaptBtn == true)
             {
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                    StartBtn = false;
-                    ChaptBtn = false;
-                    EndBtn = true;
-                    Debug.Log("챕터에서종료");
+                editBtnValue(false, false, true);
+     /*           StartBtn = false;
+                ChaptBtn = false;
+                EndBtn = true;*/
+                Debug.Log("챕터에서종료");
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                    StartBtn = true;
-                    ChaptBtn = false;
-                    EndBtn = false;
-                    Debug.Log("챕터에서시작");
+                editBtnValue(true, false, false);
+     /*           StartBtn = true;
+                ChaptBtn = false;
+                EndBtn = false;*/
+                Debug.Log("챕터에서시작");
             }
         }
         else if(EndBtn == true)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                StartBtn = false;
-                ChaptBtn = true;
-                EndBtn = false;
+                editBtnValue(false, true, false);
+                //StartBtn = false;
+                //ChaptBtn = true;
+                //EndBtn = false;
                 Debug.Log("종료에서챕터");
             }
         }
-        else
-        {
 
-        }
+
 
         if(Input.GetKeyDown(KeyCode.Return))
         {
@@ -78,6 +80,14 @@ public class LobyNavButton : MonoBehaviour
             }
         }
     }
+
+    private void editBtnValue(bool vSBtn, bool vCBtn, bool vEBtn) // 버튼값변경 함수
+    {
+        StartBtn = vSBtn;
+        ChaptBtn = vCBtn;
+        EndBtn = vEBtn;
+    }
+
 
     void Start()
     {
