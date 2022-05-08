@@ -10,6 +10,8 @@ public class LobyNavButton : MonoBehaviour
     private bool EndBtn;
     private GameObject ButtonOnOff;
     private GameObject EndOnOff;
+    private GameObject ImgSet;
+    private GameObject StartTexts;
 
     public void OnClickButton()
     {
@@ -72,6 +74,7 @@ public class LobyNavButton : MonoBehaviour
                 ButtonOnOff.SetActive(false);
             }
         }
+
         if(EndOnOff.activeSelf == true)
         {
             if(Input.GetKeyDown(KeyCode.Return))
@@ -100,6 +103,10 @@ public class LobyNavButton : MonoBehaviour
         ButtonOnOff = GameObject.Find("ButtonCanvas");
         EndOnOff = GameObject.Find("EndTextCanvas");
         EndOnOff.SetActive(false);
+        ImgSet = GameObject.Find("ImgSet");
+        ImgSet.SetActive(false);
+        StartTexts = GameObject.Find("StartReTextCanvas");
+        StartTexts.SetActive(false);
     }
 
     void Update()
