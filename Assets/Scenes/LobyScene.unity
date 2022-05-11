@@ -1026,9 +1026,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1734552183}
+      - m_Target: {fileID: 1737456182}
         m_TargetAssemblyTypeName: LobyNavButton, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: EditButtonManager
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
