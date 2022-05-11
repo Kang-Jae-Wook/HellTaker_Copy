@@ -44,10 +44,10 @@ public class LobyPass : MonoBehaviour
     void Start()
     {
         OnOffControll = GameObject.Find("TextCanvas");
-        OnOffControll.SetActive(true);
         OnOfftwo = GameObject.Find("TextCanvastwo");
-        OnOfftwo.SetActive(false);
         OnOffBeel = GameObject.Find("BeelCanvas");
+        OnOffControll.SetActive(true);
+        OnOfftwo.SetActive(false);
         OnOffBeel.SetActive(false);
         OnOffButton = GameObject.Find("ButtonCanvas");
         OnOffButton.SetActive(false);

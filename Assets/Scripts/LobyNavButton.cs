@@ -70,16 +70,10 @@ public class LobyNavButton : MonoBehaviour
             }
             else if (EndBtn == true)
             {
-                EndOnOff.SetActive(true);
+                ButtonOnOff = GameObject.Find("ButtonCanvas");      //  버튼포함캔버스
                 ButtonOnOff.SetActive(false);
-            }
-        }
-
-        if(EndOnOff.activeSelf == true)
-        {
-            if(Input.GetKeyDown(KeyCode.Return))
-            {
-                Debug.Log(" 흠");
+                EndOnOff.SetActive(true);
+                Application.Quit();
             }
         }
     }
@@ -93,20 +87,19 @@ public class LobyNavButton : MonoBehaviour
 
 
     void Start()
-    {
-        StartBtn = GameObject.Find("StartButton");
-        ChaptBtn = GameObject.Find("ChapterButton");
-        EndBtn = GameObject.Find("EndButton");
+    { 
+        StartBtn = GameObject.Find("StartButton");          //  시작버튼
+        ChaptBtn = GameObject.Find("ChapterButton");        //  챕터버튼
+        EndBtn = GameObject.Find("EndButton");              //  종료버튼
+        EndOnOff = GameObject.Find("EndTextCanvas");        //  종료클릭시 텍스트 캔버스
+        ImgSet = GameObject.Find("ImgSet");                 //  이미지총캔버스 (수정필요)
+        StartTexts = GameObject.Find("StartReTextCanvas");  //  스타트버튼 캔버스
+        EndOnOff.SetActive(false);
+        ImgSet.SetActive(false);
+        StartTexts.SetActive(false);
         StartBtn = true;
         ChaptBtn = false;
         EndBtn = false;
-        ButtonOnOff = GameObject.Find("ButtonCanvas");
-        EndOnOff = GameObject.Find("EndTextCanvas");
-        EndOnOff.SetActive(false);
-        ImgSet = GameObject.Find("ImgSet");
-        ImgSet.SetActive(false);
-        StartTexts = GameObject.Find("StartReTextCanvas");
-        StartTexts.SetActive(false);
     }
 
     void Update()
