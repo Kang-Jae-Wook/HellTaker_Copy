@@ -14,18 +14,21 @@ public class LobyNavButton : MonoBehaviour
     private GameObject StartTexts;
     private GameObject StartImg;
     private GameObject StartBack;
+    [SerializeField] private string[] StTextLine;
 
     private void OnClickButton()
     {
         if (StartBtn == true)
         {
             ButtonOnOff = GameObject.Find("ButtonCanvas");
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                ButtonOnOff.SetActive(false);
+                
+            }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 editBtnValue(false, true, false);
-               /* StartBtn = false;
-                ChaptBtn = true;
-                EndBtn = false;*/
                 Debug.Log("시작에서챕터");
             }
         }
@@ -34,17 +37,11 @@ public class LobyNavButton : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 editBtnValue(false, false, true);
-     /*           StartBtn = false;
-                ChaptBtn = false;
-                EndBtn = true;*/
                 Debug.Log("챕터에서종료");
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 editBtnValue(true, false, false);
-     /*           StartBtn = true;
-                ChaptBtn = false;
-                EndBtn = false;*/
                 Debug.Log("챕터에서시작");
             }
         }
@@ -53,9 +50,6 @@ public class LobyNavButton : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 editBtnValue(false, true, false);
-                //StartBtn = false;
-                //ChaptBtn = true;
-                //EndBtn = false;
                 Debug.Log("종료에서챕터");
             }
             if (Input.GetKeyDown(KeyCode.Return))
